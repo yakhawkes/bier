@@ -6,6 +6,16 @@
   "repository": "git@github.com:yakhawkes/bier.git",
   "author": "shawkes <shawkes@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "devserver": "webpack-dev-server --inline --hot",
+    "dev": "webpack"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
