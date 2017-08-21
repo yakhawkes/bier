@@ -1,0 +1,9 @@
+{
+  "name": "bier",
+  "version": "1.0.0",
+  "description": "BIER",
+  "main": "index.js",
+  "repository": "git@github.com:yakhawkes/bier.git",
+  "author": "shawkes <shawkes@gmail.com>",
+  "license": "MIT"
+}
