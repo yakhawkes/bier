@@ -1,5 +1,5 @@
 const React = require('react')
-const api = require('../../../test/apiclient')
+const api = require('../../test/apiclient')
 const BierList = require('./BierList.jsx')
 
 class Biers extends React.Component {
