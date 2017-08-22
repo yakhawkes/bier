@@ -4,18 +4,25 @@ const PropTypes = require('prop-types')
 function BierList(props) {
   const biere = props.biere
   return (
-    <table>
-      <tr>
-        <th>Name</th>
-      </tr>
+    <ul>
       {biere.map(bier =>
         (
-          <tr key={bier.id}>
-            <td>{bier.name}</td>
-          </tr>
+          <li key={bier.id}>
+            <div>
+              <h2>{bier.name}</h2>
+              <ul>
+                <li>
+                  ABV: {bier.abv}%
+                </li>
+                <li>
+                  Status: {bier.statusDisplay}
+                </li>
+              </ul>
+            </div>
+          </li>
         ),
       )}
-    </table>
+    </ul>
   )
 }
 module.exports = BierList
