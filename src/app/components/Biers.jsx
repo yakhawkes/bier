@@ -7,31 +7,45 @@ class Biers extends React.Component {
     super(props)
     this.state = {
       biere: [],
+      page: 1,
     };
     this.updateBiers = this.updateBiers.bind(this)
+    this.nextpage = this.nextpage.bind(this)
   }
 
   componentDidMount() {
-    this.updateBiers()
+    this.updateBiers(this.state.page)
   }
 
-  updateBiers() {
-    api.fetchBiers()
+  updateBiers(page) {
+    api.fetchBiers(page)
       .then((biere) => {
-        this.setState(() => {
-          return {
-            biere: biere.data,
-          }
-        })
+        this.setState(() => ({
+          biere: [...this.state.biere, ...biere.data],
+        }))
       })
+  }
+
+  nextpage(event) {
+    event.preventDefault()
+    const newpage = this.state.page + 1
+    this.setState(() => ({
+      page: newpage,
+    }))
+    this.updateBiers(newpage)
   }
 
   render() {
     return (
       <div>
-        {!this.state.biere
+        {this.state.biere.length === 0
           ? <p>LOADING!</p>
-          : <BierList biere={this.state.biere} />}
+          : <BierList
+            biere={this.state.biere}
+          />}
+        <a href="" onClick={this.nextpage}>
+          More bier!
+        </a>
       </div>
     )
   }
