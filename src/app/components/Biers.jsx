@@ -1,6 +1,8 @@
 const React = require('react')
 const api = require('../../test/apiclient')
 const BierList = require('./BierList.jsx')
+const MoreBier = require('./MoreBier.jsx')
+const NoMoreBier = require('./NoMoreBier.jsx')
 
 class Biers extends React.Component {
   constructor(props) {
@@ -8,6 +10,7 @@ class Biers extends React.Component {
     this.state = {
       biere: [],
       page: 1,
+      totalPages: 0,
     };
     this.updateBiers = this.updateBiers.bind(this)
     this.nextpage = this.nextpage.bind(this)
@@ -22,6 +25,7 @@ class Biers extends React.Component {
       .then((biere) => {
         this.setState(() => ({
           biere: [...this.state.biere, ...biere.data],
+          totalPages: biere.numberOfPages,
         }))
       })
   }
@@ -43,9 +47,10 @@ class Biers extends React.Component {
           : <BierList
             biere={this.state.biere}
           />}
-        <a href="" onClick={this.nextpage}>
-          More bier!
-        </a>
+        {this.state.page < this.state.totalPages
+          ? <MoreBier nextpage={this.nextpage} />
+          : <NoMoreBier />
+        }
       </div>
     )
   }
