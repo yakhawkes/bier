@@ -2,7 +2,7 @@ import React from 'react'
 import Biers from '../app/components/Biers.jsx'
 import renderer from 'react-test-renderer';
 
-test('List of Biers', () => {
+test('Page of Biers', () => {
   const component = renderer.create(
     <Biers />,
   );

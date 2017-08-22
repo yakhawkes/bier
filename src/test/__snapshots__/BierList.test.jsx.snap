@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List of Biers 1`] = `
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+  </tr>
+  <tr>
+    <td>
+      "18" Imperial IPA 2
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "633" American Pale Ale
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "Admiral" Stache
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "Ah Me Joy" Porter
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "Alternating Currant" Sour
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "B" Street Pineapple Blonde
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "B.B. Rodriguez" Double Brown
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "Bison Eye Rye" Pale Ale | 2 of 4 Part Pale Ale Series
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "California Crude" Black IPA
+    </td>
+  </tr>
+  <tr>
+    <td>
+      "C’est Noir" Imperial Stout
+    </td>
+  </tr>
+</table>
+`;

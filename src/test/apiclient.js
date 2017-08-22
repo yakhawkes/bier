@@ -5,9 +5,6 @@ const biere3 = require('./beerspayload3.json')
 
 module.exports = {
   fetchBiers(page, query) {
-    console.log(page);
-    console.log(query);
-
     let bierResponse = JSON.parse(JSON.stringify(biere))
     if (page === 2) {
       bierResponse = JSON.parse(JSON.stringify(biere2))

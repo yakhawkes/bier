@@ -2,12 +2,66 @@
 
 exports[`List of Biers 1`] = `
 <div>
-  <table>
-    <tr>
-      <th>
-        Name
-      </th>
-    </tr>
-  </table>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="querytext"
+    >
+      Search name
+    </label>
+    <input
+      autoComplete="off"
+      id="querytext"
+      onChange={[Function]}
+      placeholder=""
+      type="text"
+      value=""
+    />
+    <button
+      disabled={true}
+    >
+      Submit
+    </button>
+  </form>
+  <p>
+    LOADING!
+  </p>
+  <div>
+    No More bier! :(
+  </div>
+</div>
+`;
+
+exports[`Page of Biers 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="querytext"
+    >
+      Search name
+    </label>
+    <input
+      autoComplete="off"
+      id="querytext"
+      onChange={[Function]}
+      placeholder=""
+      type="text"
+      value=""
+    />
+    <button
+      disabled={true}
+    >
+      Submit
+    </button>
+  </form>
+  <p>
+    LOADING!
+  </p>
+  <div>
+    No More bier! :(
+  </div>
 </div>
 `;
