@@ -6,7 +6,7 @@ function BierList(props) {
       <tr>
         <th>Name</th>
       </tr>
-      {props.biers.map(bier =>
+      {props.biere.map(bier =>
         (
           <tr key={bier.id}>
             <td>{bier.name}</td>

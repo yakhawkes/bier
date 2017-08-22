@@ -6,7 +6,7 @@ class Biers extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      biers: [],
+      biere: [],
     };
     this.updateBiers = this.updateBiers.bind(this)
   }
@@ -17,10 +17,10 @@ class Biers extends React.Component {
 
   updateBiers() {
     api.fetchBiers()
-      .then((biers) => {
+      .then((biere) => {
         this.setState(() => {
           return {
-            biers: biers.data,
+            biere: biere.data,
           }
         })
       })
@@ -29,9 +29,9 @@ class Biers extends React.Component {
   render() {
     return (
       <div>
-        {!this.state.biers
+        {!this.state.biere
           ? <p>LOADING!</p>
-          : <BierList biers={this.state.biers} />}
+          : <BierList biere={this.state.biere} />}
       </div>
     )
   }
