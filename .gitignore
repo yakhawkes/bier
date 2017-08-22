@@ -28,6 +28,7 @@ _ReSharper*/
 *.tlh
 *.lib
 [Tt]est[Rr]esult*
+packages/
 
 npm-debug.log*
 yarn-debug.log*
