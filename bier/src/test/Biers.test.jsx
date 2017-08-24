@@ -1,10 +1,12 @@
 import React from 'react'
-import Biers from '../app/components/Biers.jsx'
 import renderer from 'react-test-renderer';
+
+const Biers = require('../app/components/Biers.jsx')
+const api = require('./apiclient')
 
 test('Page of Biers', () => {
   const component = renderer.create(
-    <Biers />,
+    <Biers api={api} />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

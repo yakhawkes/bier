@@ -1,5 +1,5 @@
 const React = require('react')
-const api = require('../../test/apiclient')
+const PropTypes = require('prop-types')
 const BierList = require('./BierList.jsx')
 const MoreBier = require('./MoreBier.jsx')
 const NoMoreBier = require('./NoMoreBier.jsx')
@@ -23,7 +23,7 @@ class Biers extends React.Component {
   }
 
   updateBiers(page, query) {
-    api.fetchBiers(page, query)
+    this.props.api.fetchBiers(page, query)
       .then((biere) => {
         this.setState(() => ({
           biere: [...this.state.biere, ...biere.data],
@@ -70,3 +70,9 @@ class Biers extends React.Component {
 }
 
 module.exports = Biers
+
+Biers.propTypes = {
+  api: PropTypes.shape({
+    fetchBiers: PropTypes.func,
+  }).isRequired,
+}

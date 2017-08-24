@@ -7,7 +7,9 @@ import {
 
 require('./index.css')
 
+const api = require('../../test/apiclient')
 const Biers = require('./components/Biers.jsx')
+const Header = require('./components/Header.jsx')
 
 if (module.hot) {
   module.hot.accept()
@@ -16,12 +18,9 @@ if (module.hot) {
 const App = () => (
   <Router>
     <div>
-      <h1>Bier!</h1>
-
-      <hr />
-
+      <Header />
       Where is my bier?
-      <Route path="/" component={Biers} />
+      <Route path="/" component={Biers} api={api} />
     </div>
   </Router>
 )
