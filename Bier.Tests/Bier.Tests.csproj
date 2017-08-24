@@ -64,8 +64,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="DumbCache.cs" />
     <Compile Include="DumbCacheTest.cs" />
+    <Compile Include="HttpWebRequestFactory.cs" />
+    <Compile Include="IHttpWebRequest.cs" />
+    <Compile Include="IHttpWebRequestFactory.cs" />
+    <Compile Include="IHttpWebResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using log4net;
 
 namespace Bier.Tests
@@ -18,34 +20,52 @@ namespace Bier.Tests
             }
         }
         private readonly ILog _logger;
+        private readonly IHttpWebRequestFactory _httpWebRequestFactory;
         private readonly int _cacheTime;
         private readonly Dictionary<string, CacheEntry> _cache = new Dictionary<string, CacheEntry>();
 
-        public DumbCache(ILog logger, int cacheTime)
+        public DumbCache(ILog logger, IHttpWebRequestFactory httpWebRequestFactory, int cacheTime)
         {
             _logger = logger;
+            _httpWebRequestFactory = httpWebRequestFactory;
             _cacheTime = cacheTime;
         }
 
-        public DumbCache(ILog logger) : this(logger, 30000)
+        public DumbCache(ILog logger, IHttpWebRequestFactory httpWebRequestFactory) : this(logger, httpWebRequestFactory, 30000)
         {
         }
 
-        public string GetResponse(string key)
+        public string GetResponse(string url)
         {
-            if (_cache.ContainsKey(key))
+            if (_cache.ContainsKey(url))
             {
-                if ((DateTime.Now - _cache[key].Created).TotalMilliseconds > _cacheTime)
+                if ((DateTime.Now - _cache[url].Created).TotalMilliseconds > _cacheTime)
                 {
                     _logger.Info("Updating cache");
-                    return _cache[key].Data.ToString();
+                    _cache[url] = new CacheEntry(DateTime.Now, FetchWebRequest(url));
+                    return _cache[url].Data.ToString();
                 }
                 _logger.Info("Getting from cache");
-                return _cache[key].Data.ToString();
+                return _cache[url].Data.ToString();
             }
             _logger.Info("Adding to cache");
-            _cache.Add(key, new CacheEntry(DateTime.Now, "{\"some\": \"JSON\" }"));
-            return "{\"some\": \"JSON\" }";
+
+            _cache.Add(url, new CacheEntry(DateTime.Now, FetchWebRequest(url)));
+            return _cache[url].Data.ToString();
+        }
+
+        private string FetchWebRequest(string url)
+        {
+            var webRequest = _httpWebRequestFactory.Create(url);
+            webRequest.Method = WebRequestMethods.Http.Get;
+
+            using (var httpWebResponse = webRequest.GetResponse())
+            {
+                using (var streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                {
+                    return streamReader.ReadToEnd();
+                }
+            }
         }
     }
 }
