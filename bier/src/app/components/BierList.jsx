@@ -1,28 +1,19 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const BierCard = require('./BierCard.jsx')
 
 function BierList(props) {
   const biere = props.biere
   return (
-    <ul>
+    <div className="bierlist">
       {biere.map(bier =>
         (
-          <li key={bier.id}>
-            <div>
-              <h2>{bier.name}</h2>
-              <ul>
-                <li>
-                  ABV: {bier.abv}%
-                </li>
-                <li>
-                  Status: {bier.statusDisplay}
-                </li>
-              </ul>
-            </div>
-          </li>
+          <div key={bier.id}>
+            <BierCard bier={bier} />
+          </div>
         ),
       )}
-    </ul>
+    </div>
   )
 }
 module.exports = BierList
