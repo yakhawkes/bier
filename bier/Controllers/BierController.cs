@@ -21,10 +21,11 @@ namespace Bier.Controllers
             this.Request.GetQueryString();
             IEnumerable<KeyValuePair<string, string>> queryStringnameValues = this.Request.GetQueryNameValuePairs();
             string url = $"http://api.brewerydb.com/v2/beers?key=400e2f3f8d21883ddc488e6d964f6cca&{this.Request.GetQueryString()}";
-            var dumbCache = new DumbCache(_log, new HttpWebRequestFactory());
+            var dumbCache = ApplicationDumbCache.DumbCache;
             try
             {
                 var responeContent = dumbCache.GetResponse(url);
+                ApplicationDumbCache.DumbCache = dumbCache;
                 var respons = Request.CreateResponse(HttpStatusCode.OK);
                 respons.Content = new StringContent(responeContent, Encoding.UTF8, "application/json");
                 return respons;

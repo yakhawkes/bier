@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ApplicationDumbCache.cs" />
     <Compile Include="Controllers\BierController.cs" />
     <Compile Include="Controllers\RequestExtensions.cs" />
     <Compile Include="DumbCache.cs" />
