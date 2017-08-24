@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using log4net;
 
-namespace Bier.Tests
+namespace Bier
 {
     public class DumbCache
     {

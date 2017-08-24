@@ -1,8 +1,7 @@
-﻿namespace Bier.Tests
+﻿namespace Bier
 {
     public interface IHttpWebRequest
     {
-        // expose the members you need
         string Method { get; set; }
 
         IHttpWebResponse GetResponse();

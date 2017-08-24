@@ -1,4 +1,4 @@
-namespace Bier.Tests
+namespace Bier
 {
     public interface IHttpWebRequestFactory
     {

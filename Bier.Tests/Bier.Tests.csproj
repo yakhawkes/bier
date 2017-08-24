@@ -65,12 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DumbCache.cs" />
     <Compile Include="DumbCacheTest.cs" />
-    <Compile Include="HttpWebRequestFactory.cs" />
-    <Compile Include="IHttpWebRequest.cs" />
-    <Compile Include="IHttpWebRequestFactory.cs" />
-    <Compile Include="IHttpWebResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +75,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
