@@ -26,7 +26,6 @@ class SearchBox extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="querytext">Search name</label>
         <input
           id="querytext"
           placeholder=""

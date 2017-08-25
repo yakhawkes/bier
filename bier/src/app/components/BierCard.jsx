@@ -1,5 +1,6 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const BierDetails = require('./BierDetails.jsx')
 
 class BierCard extends React.Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class BierCard extends React.Component {
             Status: {this.props.bier.statusDisplay}
           </li>
         </ul>
+        {this.state.selectedClassName
+          ? <BierDetails bier={this.props.bier} /> : ''}
       </a>
     )
   }

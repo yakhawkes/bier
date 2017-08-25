@@ -109,6 +109,12 @@ ul,li{
 .bierstats{
   font-size: 70%;
   margin: .3em;
+  width: 14em;
+}
+.bierdetails{
+  font-size: 70%;
+  margin: .3em;
+  width: 15em;
 }
 .bierCard{
   text-decoration:none;
@@ -125,6 +131,7 @@ ul,li{
 }
 .bierCardFull{
   position:absolute;
+  overflow: scroll;
   height:24em;
   width:16em;
   transform: scale(1.05) translate(-1em,0);

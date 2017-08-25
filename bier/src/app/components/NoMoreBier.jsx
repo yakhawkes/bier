@@ -2,7 +2,7 @@ const React = require('react')
 
 function NoMoreBier() {
   return (
-    <div>
+    <div className="morebeer">
       No More bier! :(
     </div>
   )
