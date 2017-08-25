@@ -57,7 +57,6 @@ class Biers extends React.Component {
   }
 
   order(orderby) {
-    console.log();
     const newsort = this.state.sort === 'ASC' ? 'DESC' : 'ASC'
     this.setState(() => ({
       biere: [],

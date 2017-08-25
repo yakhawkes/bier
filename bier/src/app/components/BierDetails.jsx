@@ -2,7 +2,7 @@ const React = require('react')
 const PropTypes = require('prop-types')
 
 function BierDetails(props) {
-  const bier = props.bier
+  const bier = props.bier 
   const labels = bier.labels
   let icon
   if (labels) {

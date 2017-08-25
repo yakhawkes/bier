@@ -37,8 +37,9 @@ namespace Bier.Controllers
             }
         }
 
+        [HttpGet]
         [Route("search")]
-        public HttpResponseMessage search()
+        public HttpResponseMessage Search()
         {
             this.Request.GetQueryString();
             IEnumerable<KeyValuePair<string, string>> queryStringnameValues = this.Request.GetQueryNameValuePairs();

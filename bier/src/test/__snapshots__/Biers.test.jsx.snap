@@ -2,32 +2,66 @@
 
 exports[`Page of Biers 1`] = `
 <div>
-  <form
-    onSubmit={[Function]}
+  <header
+    className=""
   >
-    <label
-      htmlFor="querytext"
+    <h1
+      id="logo"
     >
-      Search name
-    </label>
-    <input
-      autoComplete="off"
-      id="querytext"
-      onChange={[Function]}
-      placeholder=""
-      type="text"
-      value=""
-    />
-    <button
-      disabled={true}
-    >
-      Submit
-    </button>
-  </form>
-  <p>
-    LOADING!
-  </p>
+      Bier!
+    </h1>
+    <nav>
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          id="querytext"
+          onChange={[Function]}
+          placeholder=""
+          type="text"
+          value=""
+        />
+        <button
+          disabled={true}
+        >
+          Submit
+        </button>
+      </form>
+      <a
+        href=""
+        onClick={[Function]}
+      >
+        name
+        
+        
+      </a>
+      <a
+        href=""
+        onClick={[Function]}
+      >
+        abv
+        
+        
+      </a>
+      <a
+        href=""
+        onClick={[Function]}
+      >
+        status
+        
+        
+      </a>
+    </nav>
+  </header>
   <div>
+    <div
+      className="bierlist"
+    />
+  </div>
+  <div
+    className="morebeer"
+  >
     No More bier! :(
   </div>
 </div>

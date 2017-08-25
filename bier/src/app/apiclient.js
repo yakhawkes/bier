@@ -2,9 +2,9 @@ const axios = require('axios')
 
 module.exports = {
   fetchBiers(page, query, orderby, sort) {
-    let encodedURI = window.encodeURI('http://localhost:63135/api/')
+    let encodedURI = window.encodeURI('/api/')
     encodedURI = query
-      ? `${encodedURI}search?${encodedURI}q=${window.encodeURI(query)}&`
+      ? `${encodedURI}search?q=${window.encodeURI(query)}&`
       : `${encodedURI}bier?`
     if (page) {
       encodedURI = `${encodedURI}p=${page}&`

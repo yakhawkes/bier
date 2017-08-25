@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 
 require('./index.css')
 
-console.log(module.hot);
 const api = module.hot ? require('./../test/apiclient') : require('./apiclient')
 const Biers = require('./components/Biers.jsx')
 
