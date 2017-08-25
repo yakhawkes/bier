@@ -1,12 +1,16 @@
 const React = require('react')
-const NavLink = require('react-router-dom').NavLink
+const SearchBox = require('./SearchBox.jsx')
+const Orderer = require('./Orderer.jsx')
 
-function Nav() {
+function Nav(props) {
   return (
     <nav>
-      <a href="">Name</a>
-      <a href="">Abv</a>
-      <a href="">Status</a>
+      <SearchBox
+        onSubmit={props.searhSubmit}
+      />
+      <Orderer neworder="name" order={props.order} orderby={props.orderby} sort={props.sort} />
+      <Orderer neworder="abv" order={props.order} orderby={props.orderby} sort={props.sort} />
+      <Orderer neworder="status" order={props.order} orderby={props.orderby} sort={props.sort} />
     </nav>
   )
 }

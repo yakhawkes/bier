@@ -4,7 +4,11 @@ const biere2 = require('./beerspayload2.json')
 const biere3 = require('./beerspayload3.json')
 
 module.exports = {
-  fetchBiers(page, query) {
+  fetchBiers(page, query, orderby, sort) {
+    console.log(page);
+    console.log(query);
+    console.log(orderby);
+    console.log(sort);
     let bierResponse = JSON.parse(JSON.stringify(biere))
     if (page === 2) {
       bierResponse = JSON.parse(JSON.stringify(biere2))

@@ -17,7 +17,7 @@ class Biers extends React.Component {
   headShrinker() {
     window.addEventListener('scroll', () => {
       const distanceY = window.pageYOffset || document.documentElement.scrollTop
-      const shrinkOn = 100
+      const shrinkOn = 50
       this.setState({
         selectedClassName: (distanceY > shrinkOn
           ? 'smaller'
@@ -32,7 +32,13 @@ class Biers extends React.Component {
     return (
       <header className={this.state.selectedClassName}>
         <h1 id="logo">Bier!</h1>
-        <Nav />
+        <Nav
+          searhSubmit={this.props.searhSubmit}
+          order={this.props.order}
+          orderby={this.props.orderby}
+          sort={this.props.sort}
+          query={this.props.query}
+        />
       </header>
     )
   }
