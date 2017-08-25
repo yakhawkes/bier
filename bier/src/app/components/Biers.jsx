@@ -79,11 +79,13 @@ class Biers extends React.Component {
           sort={this.state.sort}
           query={this.state.query}
         />
-        {this.state.biere.length === 0 && this.state.query
-          ? <p>LOADING!</p>
-          : <BierList
-            biere={this.state.biere}
-          />}
+        <div>
+          {this.state.biere.length === 0 && this.state.query
+            ? <p>LOADING!</p>
+            : <BierList
+              biere={this.state.biere}
+            />}
+        </div>
         {this.state.page < this.state.totalPages
           ? <MoreBier nextpage={this.nextpage} />
           : <NoMoreBier />

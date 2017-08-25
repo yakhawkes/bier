@@ -9,6 +9,7 @@ body {
 }
 #app {
   padding-top: 150px;
+  height: 600px;
 }
 header {
     width: 100%;
@@ -40,8 +41,12 @@ header nav {
     padding-left: 2em;
     padding-right: 2em;
 }
+header nav form {
+    margin-top: 50px;
+    margin-left: 20px;
+    transition: all 0.3s;
+  }
 header nav a {
-    line-height: 150px;
     margin-left: 20px;
     color: #fff;
     text-decoration: none;
@@ -52,6 +57,9 @@ header nav a {
 header nav a:hover {
     color: #F7E291;
 }
+header.smaller #querytext, header.smaller nav form button {
+  transition: all 0.3s;
+}
 header.smaller {
     height: 75px;
 }
@@ -61,8 +69,15 @@ header.smaller h1#logo {
     line-height: 75px;
     font-size: 30px;
 }
+
+header.smaller nav form {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+header.smaller #querytext, header.smaller nav form button {
+    font-size: .6em;
+}
 header.smaller nav a {
-    line-height: 75px;
     font-size: 1em;
 }
 ul,li{
@@ -122,14 +137,34 @@ ul,li{
   z-index:5;
   transition:transform .15s linear, height 0.5s, width .15s linear;
 }
+.morebeer {
+    margin-top: 1.5em;
+    box-shadow:6px -6px 7px rgba(0,0,0,.4);
+    background-color: #e0e0a0;
+    height: 150px;
+    width: 100%;
+    line-height: 100px;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-bottom: 2em;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 400;
+}
+div.morebeer > a{
+    display: inline-block;
+    text-decoration: none;
+}
 
 @media all and (max-width: 660px) {
     header h1#logo {
         display: block;
         float: none;
         margin: 0 auto;
-        height: 100px;
-        line-height: 100px;
+        height: 70px;
+        line-height: 70px;
         text-align: center;
     }
     header nav {
@@ -143,11 +178,21 @@ ul,li{
         line-height: 50px;
         margin: 0 10px;
     }
+    header nav form {
+        margin-top: 5px;
+        margin-left: 0px;
+        transition: all 0.3s;
+    }
+    header.smaller nav form {
+        margin-top: 10px;
+        margin-left: 0px;
+        transition: all 0.3s;
+    }
     header.smaller {
         height: 75px;
     }
     header.smaller h1#logo {
-        height: 40px;
+        height: 20px;
         line-height: 40px;
         font-size: 30px;
     }
@@ -155,6 +200,6 @@ ul,li{
         height: 35px;
     }
     header.smaller nav a {
-        line-height: 35px;
+        line-height: 15px;
     }
 }

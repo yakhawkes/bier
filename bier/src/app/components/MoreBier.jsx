@@ -3,9 +3,11 @@ const PropTypes = require('prop-types')
 
 function MoreBier(props) {
   return (
-    <a href="" onClick={props.nextpage}>
-      More bier!
-    </a>
+    <div className="morebeer">
+      <a href="" onClick={props.nextpage}>
+        More bier!
+      </a>
+    </div>
   )
 }
 

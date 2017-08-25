@@ -21,6 +21,7 @@ namespace Bier.Controllers
             this.Request.GetQueryString();
             IEnumerable<KeyValuePair<string, string>> queryStringnameValues = this.Request.GetQueryNameValuePairs();
             string url = $"http://api.brewerydb.com/v2/beers?key=400e2f3f8d21883ddc488e6d964f6cca&{this.Request.GetQueryString()}";
+            _log.Info($"Calling: {url}");
             var dumbCache = ApplicationDumbCache.DumbCache;
             try
             {
@@ -42,6 +43,7 @@ namespace Bier.Controllers
             this.Request.GetQueryString();
             IEnumerable<KeyValuePair<string, string>> queryStringnameValues = this.Request.GetQueryNameValuePairs();
             string url = $"http://api.brewerydb.com/v2/search?key=400e2f3f8d21883ddc488e6d964f6cca&type=beer&{this.Request.GetQueryString()}";
+            _log.Info($"Calling: {url}");
             var dumbCache = ApplicationDumbCache.DumbCache;
             try
             {
