@@ -19,6 +19,7 @@ class Biers extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.api);
     this.updateBiers(this.state.page)
   }
 
