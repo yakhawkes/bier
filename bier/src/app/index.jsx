@@ -12,7 +12,6 @@ if (module.hot) {
 
 const App = () => (
   <div>
-    Where is my bier?
     <Biers api={api} />
   </div>
 )
